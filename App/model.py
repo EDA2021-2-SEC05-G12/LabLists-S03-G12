@@ -27,7 +27,7 @@
 
 import config as cf
 from DISClib.ADT import list as lt
-from DISClib.Algorithms.Sorting import shellsort as sa
+from DISClib.Algorithms.Sorting import quicksort as sa
 assert cf
 
 """
@@ -54,9 +54,9 @@ def newCatalog():
     catalog['books'] = lt.newList()
     catalog['authors'] = lt.newList('ARRAY_LIST',
                                     cmpfunction=compareauthors)
-    catalog['tags'] = lt.newList('ARRAY_LIST',
+    catalog['tags'] = lt.newList('SINGLE_LINKED',
                                  cmpfunction=comparetagnames)
-    catalog['book_tags'] = lt.newList('ARRAY_LIST')
+    catalog['book_tags'] = lt.newList('SINGLE_LINKED')
 
     return catalog
 
